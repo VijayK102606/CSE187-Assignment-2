@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+
+# env files
+.env
+
+# build output
+build/
+dist/
+
+# os
+Thumbs.db
+
+# editors
+.vscode/
+
+# coverage
+coverage/
+
+# copypaste
+copypaste/
+
+# logs
+*.log
+npm-debug.log*
