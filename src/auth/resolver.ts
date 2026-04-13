@@ -9,14 +9,26 @@
 #######################################################################
 */
 
-import { Resolver, Query } from "type-graphql"
+import { Resolver, Query, Args, Mutation, Arg } from "type-graphql"
+import { Authenticated, Credentials, CurrentMember, NewMember } from "./schema"
+import { AuthService } from "./service"
 
 // Change this to the signature from the example
 @Resolver()
 export class AuthResolver {
-  @Query(returns => String)
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  @Query(returns => Authenticated)
   async login(
-  ): Promise<string> {
-    throw new Error('Not implemented')
+    @Args() credentials: Credentials,
+  ): Promise<Authenticated> {
+    return new AuthService().login(credentials)
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  @Mutation(returns => CurrentMember)
+  async signup(
+    @Arg("input") account: NewMember,
+  ): Promise<CurrentMember> {
+    return new AuthService().signup(account)
   }
 }

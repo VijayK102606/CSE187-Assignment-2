@@ -8,7 +8,7 @@ VALUES (
     'email','anna@books.com',
     'name','Anna Admin',
     'pwhash',crypt('annaadmin',gen_salt('bf')),
-    'roles','["admin"]'
+    'roles',ARRAY['admin']
   )
 );
 ------------------------------------

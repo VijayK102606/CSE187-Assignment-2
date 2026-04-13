@@ -10,5 +10,15 @@
 */
 
 import { AuthResolver } from './auth/resolver'
+import { PostResolver } from './post/resolver'
+import { RequestResolver } from './request/resolver'
+import { FriendResolver } from './friend/resolver'
+import { MemberResolver } from './member/resolver'
 
-export const resolvers = [AuthResolver] as const
+export const resolvers = [
+    AuthResolver,
+    PostResolver,
+    RequestResolver,
+    FriendResolver,
+    MemberResolver
+] as const
